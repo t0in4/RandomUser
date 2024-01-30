@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.example.UserInfoResponse
 import com.shift.randomuser.model.response.Results
 //import com.shift.randomuser.model.Repository
 import com.shift.randomuser.model.api.RetrofitInstance
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 class RepositoryViewModel(
     //private val repository: Repository = Repository()
 ): ViewModel() {
-    val _responseState: MutableLiveData<List<Results>> = MutableLiveData()
+    val _responseState: MutableLiveData<List<UserInfoResponse>> = MutableLiveData()
 /*
     suspend fun getUInfo(): List<Results> {
         return repository.getUInfo().results
@@ -25,7 +26,7 @@ class RepositoryViewModel(
         }
     }
 */
-    val responseState: LiveData<List<Results>>
+    val responseState: LiveData<List<UserInfoResponse>>
         get() = _responseState
 
     fun getData() {

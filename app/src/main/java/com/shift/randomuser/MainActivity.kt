@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.example.UserInfoResponse
 import com.shift.randomuser.databinding.ActivityMainBinding
 import com.shift.randomuser.model.response.Results
 import com.shift.randomuser.viewmodel.RepositoryViewModel
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: RepositoryViewModel
     private lateinit var userInfoAdapter: UserInfoAdapter
-    private var results = mutableListOf<Results>()
+    private var results = mutableListOf<UserInfoResponse>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
