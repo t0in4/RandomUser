@@ -7,7 +7,7 @@ import com.shift.randomuser.model.response.Results
 
 data class UserInfoResponse (
 
-    @SerializedName("results" ) var results : List<ParentData> = listOf(),
-    @SerializedName("info"    ) var info    : List<Info>    = listOf()
+    @SerializedName("results" ) var results : List<Results>,
+    @SerializedName("info"    ) var info    : List<Info>
 
 )

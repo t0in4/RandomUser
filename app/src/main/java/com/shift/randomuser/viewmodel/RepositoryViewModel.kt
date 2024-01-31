@@ -9,12 +9,13 @@ import com.example.example.UserInfoResponse
 import com.shift.randomuser.model.response.Results
 //import com.shift.randomuser.model.Repository
 import com.shift.randomuser.model.api.RetrofitInstance
+import com.shift.randomuser.model.response.UserResults
 import kotlinx.coroutines.launch
 
 class RepositoryViewModel(
     //private val repository: Repository = Repository()
 ): ViewModel() {
-    val _responseState: MutableLiveData<List<UserInfoResponse>> = MutableLiveData()
+    private val _responseState: MutableLiveData<UserResults> = MutableLiveData()
 /*
     suspend fun getUInfo(): List<Results> {
         return repository.getUInfo().results
@@ -26,7 +27,7 @@ class RepositoryViewModel(
         }
     }
 */
-    val responseState: LiveData<List<UserInfoResponse>>
+    val responseState: LiveData<UserResults>
         get() = _responseState
 
     fun getData() {

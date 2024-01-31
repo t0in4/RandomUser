@@ -48,11 +48,14 @@ dependencies {
     // подключаемые библиотеки - start
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     // для viewModelScope
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
+    // для логгирования okhttp
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
     // подключаемые библиотеки - end
 
 

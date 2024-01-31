@@ -9,12 +9,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.example.UserInfoResponse
-import com.shift.randomuser.model.response.Results
 import com.shift.randomuser.R
+import com.shift.randomuser.model.response.Results
+import com.shift.randomuser.model.response.UserResults
+
 const val TAG = "UserInfoAdapter"
 class UserInfoAdapter(
     private val context: Context,
-    private val users: List<UserInfoResponse>
+    private val users: MutableList<UserResults>
 ) : RecyclerView.Adapter<UserInfoAdapter.ViewHolder>(){
 
 
@@ -44,10 +46,10 @@ class UserInfoAdapter(
             tvPhoto = itemView.findViewById(R.id.photo)
         }
 
-        fun bind(res: UserInfoResponse) {
-            tvName.text = res.results.toString()
-            tvAddress.text = res.results.toString()
-            tvPhone.text = res.results.toString()
+        fun bind(res: UserResults) {
+            tvName.text = res.toString()
+            tvAddress.text = res.toString()
+            tvPhone.text = res.toString()
             //tvPhoto.
         }
 
