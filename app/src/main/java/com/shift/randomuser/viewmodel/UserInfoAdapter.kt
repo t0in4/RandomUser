@@ -16,7 +16,7 @@ import com.shift.randomuser.model.response.UserResults
 const val TAG = "UserInfoAdapter"
 class UserInfoAdapter(
     private val context: Context,
-    private val users: MutableList<UserResults>
+    private val users: List<UserResults>
 ) : RecyclerView.Adapter<UserInfoAdapter.ViewHolder>(){
 
 
@@ -47,10 +47,13 @@ class UserInfoAdapter(
         }
 
         fun bind(res: UserResults) {
-            tvName.text = res.toString()
-            tvAddress.text = res.toString()
-            tvPhone.text = res.toString()
-            //tvPhoto.
+            for (i in res.results) {
+                tvName.text = i.name.toString()
+                tvAddress.text = i.location.toString()
+                tvPhone.text = i.phone
+                //tvPhoto.
+            }
+
         }
 
     }

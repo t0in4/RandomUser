@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 class RepositoryViewModel(
     //private val repository: Repository = Repository()
 ): ViewModel() {
-    private val _responseState: MutableLiveData<UserResults> = MutableLiveData()
+    private val _responseState: MutableLiveData<List<UserResults>> = MutableLiveData()
 /*
     suspend fun getUInfo(): List<Results> {
         return repository.getUInfo().results
@@ -27,14 +27,14 @@ class RepositoryViewModel(
         }
     }
 */
-    val responseState: LiveData<UserResults>
+    val responseState: LiveData<List<UserResults>>
         get() = _responseState
 
     fun getData() {
         viewModelScope.launch {
             val fetchedUsers = RetrofitInstance.api.getUInfo()
             Log.i(TAG, "fetched posts: $fetchedUsers")
-            _responseState.value = fetchedUsers
+            _responseState.value = listOf(fetchedUsers)
         }
     }
 

@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[RepositoryViewModel::class.java]
         viewModel.responseState.observe(this, Observer {responseState ->
             //Log.i(TAG, "Number of users: ${responseState.size}")
-            results.addAll(listOf(responseState))
+            results.addAll(responseState)
             userInfoAdapter.notifyDataSetChanged()
         })
         userInfoAdapter = UserInfoAdapter(this, results)
