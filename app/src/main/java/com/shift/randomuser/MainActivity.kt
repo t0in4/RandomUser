@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.example.UserInfoResponse
 import com.shift.randomuser.databinding.ActivityMainBinding
+import com.shift.randomuser.model.response.Results
 import com.shift.randomuser.model.response.UserResults
 import com.shift.randomuser.viewmodel.RepositoryViewModel
 import com.shift.randomuser.viewmodel.UserInfoAdapter
@@ -21,8 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: RepositoryViewModel
     private lateinit var userInfoAdapter: UserInfoAdapter
-    private var results = mutableListOf<UserResults>()
-
+    private var results = mutableListOf<Results>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -36,11 +36,8 @@ class MainActivity : AppCompatActivity() {
         userInfoAdapter = UserInfoAdapter(this, results)
         binding.contentMain.recyclerView.adapter = userInfoAdapter
         binding.contentMain.recyclerView.layoutManager = LinearLayoutManager(this)
-
         binding.button.setOnClickListener {
             viewModel.getData()
-
         }
-
     }
 }

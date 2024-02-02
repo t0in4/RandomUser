@@ -11,6 +11,7 @@ data class Results (
   @SerializedName("name"     ) var name     : Name?     = Name(),
   @SerializedName("location" ) var location : Location? = Location(),
   @SerializedName("phone"    ) var phone    : String?   = null,
+  @SerializedName("email"    ) var email    : String?   = null,
   @SerializedName("picture"  ) var picture  : Picture?  = Picture()
 
 )

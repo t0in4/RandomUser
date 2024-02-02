@@ -56,6 +56,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
     // для логгирования okhttp
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    // изображения
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
+    // Skip this if you don't want to use integration libraries or configure Glide.
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
     // подключаемые библиотеки - end
 
 
