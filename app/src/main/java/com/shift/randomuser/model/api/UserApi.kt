@@ -10,8 +10,6 @@ import retrofit2.http.GET
 interface UserApi {
     @GET("api/?inc=name%2Cpicture%2Clocation%2Cphone%2Cemail&results=100")
     suspend fun getUInfo(): UserResults
-    /*@GET("api/?inc=name%2Cpicture%2Clocation%2Cphone%2Cemail")*/
-    suspend fun getUser(res: Results): Results
 
 
 }
